@@ -1,0 +1,6 @@
+Database rules:
+1. single word circuit breaker - SingleWord
+2. already confirmed phrases (search the text if the words are found in any order in the string of 5 words before and 5 words after the detected word) - ConfirmedPhrase
+3. potential phrases - should access google to search for that potential triggering phrase - PotentialPhrase
+
+Database columns should be an incremental id, the word / phrase, the category in which that word / phrase is
