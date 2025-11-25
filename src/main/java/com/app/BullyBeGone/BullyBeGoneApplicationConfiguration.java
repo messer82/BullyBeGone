@@ -10,9 +10,6 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
 
 import javax.sql.DataSource;
 import java.util.Arrays;
@@ -40,17 +37,6 @@ public class BullyBeGoneApplicationConfiguration {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
-    }
-
-    @Bean
-    public Docket api() {
-        logger.debug("ajunge aici");
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-//                .apis(RequestHandlerSelectors.any())
-//                .paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.test.BullyBeGoneApplication.BullyBeGoneApplication"))
-                .build();
     }
 
     @Bean
